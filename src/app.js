@@ -5,7 +5,6 @@ import routes from './routes';
 import connectdb from './config/database'
 
 
-
 const corsOptions = { origin: '*', optionsSucessStatus: 200} 
 const app = express()
 app.use(cors());
