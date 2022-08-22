@@ -1,42 +1,63 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema ({
-    userName:{
-        type: 'string',
-        required: true,
-        max: 30,
-        min: 3
+const UserSchema = new Schema({
+	userName: {
+		type: String,
+		required: true,
+		max: 30,
+		min: 3,
+	},
+	email: {
+		type: String,
+		required: true,
+		max: 30,
+		min: 3,
+	},
+	password: {
+		type: String,
+		required: true,
+		max: 12,
+		min: 6,
+	},
+    profilePicture:{
+        type: String
     },
-    email:{
-        type: String,
-        required: true,
-        max: 30,
-        min: 3
+    price: {
+        type: Number
     },
-    password:{
-        type: String,
-        required: true,
-        max: 12,
-        min: 6
-    },
-    Role:{
-        type: 'string',
-    },
-    CreatedDate:{
-        type: 'date',
-        default: Date.now()
-    },
-})
+	artistType: {
+		type: String,
+		min: 3,
+		max: 30,
+	},
+	location: {
+		type: String,
+		min: 3,
+		max: 30,
+	},
+	awards: [],
+	skills: [],
 
-UserSchema.pre('save', async function(next){
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password,salt)
-    next()
-    });
+	Role: {
+		type: String,
+		enum: ['client', 'artist', 'admin'],
+		required: true,
+	},
+	CreatedDate: {
+		type: Date,
+		default: Date.now(),
+	},
+});
 
-const User =  mongoose.model('User' , UserSchema)
+UserSchema.pre('save', async function (next) {
+	const salt = await bcrypt.genSalt(10);
+	this.password = await bcrypt.hash(this.password, salt);
+	next();
+});
+
+const User = mongoose.model('User', UserSchema);
 
 export default User;
