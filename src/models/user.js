@@ -36,7 +36,53 @@ UserSchema.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password,salt)
     next()
     });
+    
+const profileSchema = new Schema({
+    firstName:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    lastName:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    gender:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    dateOfBirth:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    email:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    PhoneNumber:{
+        type: 'String',
+        required: true,
+        max: 30,
+        min: 3
+    },
+    location:{
+        type: 'string',
+        required: true,
+        max: 30,
+        min: 3
+    },
 
-const User =  mongoose.model('User' , UserSchema)
+})
+
+const User =  mongoose.model('User' , UserSchema,profileSchema)
 
 export default User;

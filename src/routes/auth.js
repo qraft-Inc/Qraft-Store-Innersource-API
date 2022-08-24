@@ -8,6 +8,7 @@ const router = Router();
 //section routing
 router.post('/register', AuthController.registration)
 router.get('/login', AuthController.login)
+router.get('/profile', AuthController.profile)
 // router.post('/send/forgot-password', validateEmail, sendResetPasswordEmail);   template
 
 export default router;  
