@@ -17,6 +17,11 @@ class userService {
 		const user = await User.findOne({ email: data });
 		if (user) return user;
 	};
+
+	static checkUser = async (query) => {
+		const user = await User.findOne(query);
+		if (user) return user;
+	}
 }
 
 export default userService;

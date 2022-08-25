@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes';
 import connectdb from './config/database'
+import session from 'express-session';
 
 
 const corsOptions = { origin: '*', optionsSucessStatus: 200} 
@@ -10,6 +11,11 @@ const app = express()
 app.use(cors());
 dotenv.config();
 app.use(express.json());
+app.use(session({
+  secret: 'melody hensley is my spirit animal',
+  resave: true,
+  saveUninitialized: true
+}));
 
 // connect database
 connectdb()

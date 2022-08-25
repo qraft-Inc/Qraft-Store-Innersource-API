@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
 
 const Schema = mongoose.Schema;
 
@@ -12,35 +11,29 @@ const UserSchema = new Schema({
 	},
 	email: {
 		type: String,
-		required: true,
 		max: 30,
 		min: 3,
 	},
+
+    googleId: {
+        type: String
+    },
+
+	linkedinId: {
+		type: String
+	},
+	twitterId:{
+		type: String
+	},
+	
 	password: {
 		type: String,
-		required: true,
 		max: 12,
 		min: 6,
 	},
     profilePicture:{
         type: String
     },
-    price: {
-        type: Number
-    },
-	artistType: {
-		type: String,
-		min: 3,
-		max: 30,
-	},
-	location: {
-		type: String,
-		min: 3,
-		max: 30,
-	},
-	awards: [],
-	skills: [],
-
 	Role: {
 		type: String,
 		enum: ['client', 'artist', 'admin'],
@@ -50,12 +43,6 @@ const UserSchema = new Schema({
 		type: Date,
 		default: Date.now(),
 	},
-});
-
-UserSchema.pre('save', async function (next) {
-	const salt = await bcrypt.genSalt(10);
-	this.password = await bcrypt.hash(this.password, salt);
-	next();
 });
 
 const User = mongoose.model('User', UserSchema);

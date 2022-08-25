@@ -4,23 +4,26 @@ import Token from '../helpers/token';
 import protection from '../helpers/encryption';
 
 const { createUser, findUser } = userService;
-const { checkPassword } = protection;
+const { checkPassword, hashPassword } = protection;
 const { generateToken } = Token;
 class AuthController {
   //registration
   static registration = async (req, res) => {
+
+    const hashedPassword = await hashPassword(req.body.password);
+    console.log(hashedPassword)
+
     const user = {
       userName: req.body.userName,
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
+      Role: req.body.Role
     };
     const isEmailAlreadyUsed = await findUser(user.email);
-    if (isEmailAlreadyUsed)
-      return res.status(400).send({ error: messages.emailIsTaken });
+    if (isEmailAlreadyUsed) return res.status(400).send({ error: messages.emailIsTaken });
     const createdUser = await createUser(user);
-    res.status(201).send({ message: messages.accountCreated });
+    res.status(201).send({ message: messages.accountCreated});
   };
-
 
   //login
   static login = async (req, res) => {
@@ -37,7 +40,7 @@ class AuthController {
         user.password
       );
       if (doesPasswordMatch) {
-        const tokenPackage = { name: user.userName, id: user._id };
+        const tokenPackage = { name: user.userName, id: user._id, Role: user.Role, email: user.email };
         const token = await generateToken(
           tokenPackage,
           process.env.TOKEN_SECRET,
