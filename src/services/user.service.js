@@ -19,4 +19,24 @@ class userService {
 	};
 }
 
+
+
+class userAddress {
+	static createUserAddress = async (data) => {
+		const address = new User(data);
+		try {
+			await user.save();
+			return user;
+		} catch (error) {
+			throw new Error(error);
+		}
+	};
+
+	static findUserAddress = async (data) => {
+		const address = await User.findOne({ email: data });
+		if (address) return address;
+	};
+}
+
+
 export default userService;
