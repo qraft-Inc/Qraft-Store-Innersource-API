@@ -11,6 +11,7 @@ const router = Router();
 //section routing
 router.post('/register',registrationValidation, AuthController.registration)
 router.get('/login',loginValidation, AuthController.login)
+router.route('/me/update').put(isAuthenticatedUser,updateProfile)
 // router.post('/send/forgot-password', validateEmail, sendResetPasswordEmail);   template
 
 export default router;  
