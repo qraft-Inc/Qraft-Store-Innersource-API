@@ -12,7 +12,6 @@ const { generateToken } = Token;
 class LinkedinController {
 	static onSuccess = async (req, res) => {
 		try {
-
 			const { name, id, emails, displayName } = req.user;
 
 			const newUser = {
