@@ -1,4 +1,6 @@
+import dotenv from 'dotenv';
 import passport from 'passport';
+dotenv.config();
 import { Strategy as LinkedInStrategy } from 'passport-linkedin-oauth2';
 
 const host = process.env.HOST || 'http://localhost:3000';
