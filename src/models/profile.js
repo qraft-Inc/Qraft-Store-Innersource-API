@@ -9,7 +9,6 @@ const ProfileSchema = new Schema({
 	},
 	firstName : {
 		type: String,
-		required: true,
 		max: 30,
 		min: 3,
 	},
@@ -22,27 +21,27 @@ const ProfileSchema = new Schema({
     email: {
         type: String
     },
+
+	phone: {
+		type: String
+	},
 	
 	gender: {
 		type: String,
-        enum: ['male', 'female'],
-		required: true,
+        enum: ['male', 'female']
 	},
 
     dob:{
         type: String,
-        required: true
     },
 
     price_range: {
         type: String,
-        required: true
     },
 	profession: {
 		type: String,
 		min: 3,
 		max: 30,
-        required: true
 	},
 	location: {
 		type: String,
@@ -63,6 +62,9 @@ const ProfileSchema = new Schema({
 		type: String,
 		min: 3,
 		max: 30,
+	},
+	working_hours: {
+		type: String
 	},
     Band_membership: {
 		type: String,
