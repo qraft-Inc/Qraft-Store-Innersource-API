@@ -63,9 +63,6 @@ const ProfileSchema = new Schema({
 		min: 3,
 		max: 30,
 	},
-	working_hours: {
-		type: String
-	},
     Band_membership: {
 		type: String,
 		min: 3,
