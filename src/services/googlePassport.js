@@ -1,7 +1,5 @@
-import dotenv from 'dotenv';
 import passport from 'passport';
 import GoogleStrategy from 'passport-google-oauth2';
-dotenv.config();
 const host = process.env.HOST || 'http://localhost:3000';
 
 passport.serializeUser(function ser(user, done) {
@@ -15,7 +13,7 @@ passport.deserializeUser(function deser(user, done) {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientID: "409401007740-i3g2o0jlba1t1e6jcuiotvisn73s1kuq.apps.googleusercontent.com",
       clientSecret: "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",
       callbackURL: `${host}/api/auth/auth/google/callback`,
       passReqToCallback: true,
