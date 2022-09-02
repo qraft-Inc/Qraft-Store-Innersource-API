@@ -34,6 +34,7 @@
     "passport": "^0.6.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-linkedin-oauth2": "^2.0.0",
+<<<<<<< HEAD
     "passport-twitter": "^1.0.4",
     "passport-twitter-oauth2": "^2.1.1"
   },
@@ -41,5 +42,13 @@
     "node": "16.x",
     "npm": "8.x",
     "yarn": "1.x"
+=======
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "babel-install": "2.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+>>>>>>> api documetation
   }
 }
