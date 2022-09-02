@@ -1,7 +1,6 @@
 import passport from 'passport';
 import Token from '../helpers/token';
 import userService from '../services/user.service';
-import userService from '../services/user.linkedinPassport';
 
 passport.use(passport.initialize());
 passport.use(passport.session());

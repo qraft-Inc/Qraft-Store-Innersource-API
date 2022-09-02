@@ -2694,13 +2694,6 @@
     "jwa" "^1.4.1"
     "safe-buffer" "^5.0.1"
 
-"jwt@^0.2.0":
-  "integrity" "sha512-+lsJgK3p+dr7yCHO19Ap2uFh+pMSCayPRGjWmf3kYCnYfO+1kqz4DqA8s65HKYIrw5c2NBo+dEvzoZUco09j4Q=="
-  "resolved" "https://registry.npmjs.org/jwt/-/jwt-0.2.0.tgz"
-  "version" "0.2.0"
-  dependencies:
-    "node-base64" "0.0.1"
-
 "kareem@2.4.1":
   "integrity" "sha512-aJ9opVoXroQUPfovYP5kaj2lM7Jn02Gw13bL0lg9v0V7SaUc0qavPs0Eue7d2DcC3NjqI6QAUElXNsuZSeM+EA=="
   "resolved" "https://registry.npmjs.org/kareem/-/kareem-2.4.1.tgz"
@@ -2938,11 +2931,6 @@
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
   "version" "3.2.1"
 
-"node-base64@0.0.1":
-  "integrity" "sha512-lzWZQXvK7O1g5aKPCTYQJFGJc3MToEMlGmhXN+2UtkRYQz0OiWHoSMkfqQedUYCwWnixvsauH/IFsaFkrspjYQ=="
-  "resolved" "https://registry.npmjs.org/node-base64/-/node-base64-0.0.1.tgz"
-  "version" "0.0.1"
-
 "node-environment-flags@^1.0.5":
   "integrity" "sha512-5Evy2epuL+6TM0lCQGpFIj6KwiEsGh1SrHUhTbNX+sLbBtjidPZFAnVK9y5yU1+h//RitLbRHTIMyxQPtxMdHw=="
   "resolved" "https://registry.npmjs.org/node-environment-flags/-/node-environment-flags-1.0.6.tgz"
@@ -3117,6 +3105,15 @@
   dependencies:
     "passport-oauth2" "1.x.x"
 
+"passport-oauth1@1.x.x":
+  "integrity" "sha512-Sv2YWodC6jN12M/OXwmR4BIXeeIHjjbwYTQw4kS6tHK4zYzSEpxBgSJJnknBjICA5cj0ju3FSnG1XmHgIhYnLg=="
+  "resolved" "https://registry.npmjs.org/passport-oauth1/-/passport-oauth1-1.2.0.tgz"
+  "version" "1.2.0"
+  dependencies:
+    "oauth" "0.9.x"
+    "passport-strategy" "1.x.x"
+    "utils-merge" "1.x.x"
+
 "passport-oauth2@^1.1.2", "passport-oauth2@1.x.x":
   "integrity" "sha512-ZbV43Hq9d/SBSYQ22GOiglFsjsD1YY/qdiptA+8ej+9C1dL1TVB+mBE5kDH/D4AJo50+2i8f4bx0vg4/yDDZCQ=="
   "resolved" "https://registry.npmjs.org/passport-oauth2/-/passport-oauth2-1.6.1.tgz"
@@ -3132,6 +3129,22 @@
   "integrity" "sha512-CB97UUvDKJde2V0KDWWB3lyf6PC3FaZP7YxZ2G8OAtn9p4HI9j9JLP9qjOGZFvyl8uwNT8qM+hGnz/n16NI7oA=="
   "resolved" "https://registry.npmjs.org/passport-strategy/-/passport-strategy-1.0.0.tgz"
   "version" "1.0.0"
+
+"passport-twitter-oauth2@^2.1.1":
+  "integrity" "sha512-wkJLfsms4xIS5MO9IK243rJI9cASJBma9CYJAnVf0alj4blp/wykeQrr0i0HgBwrtAiJUN/nqx3P9rzwS5ytAQ=="
+  "resolved" "https://registry.npmjs.org/passport-twitter-oauth2/-/passport-twitter-oauth2-2.1.1.tgz"
+  "version" "2.1.1"
+  dependencies:
+    "passport-oauth2" "1.x.x"
+    "xtraverse" "0.1.x"
+
+"passport-twitter@^1.0.4":
+  "integrity" "sha512-qvdauqCqCJJci82mJ9hZZQ6nAv7aSHV31svL8+9H7mRlDdXCdfU6AARQrmmJu3DRmv9fvIebM7zzxR7mVufN3A=="
+  "resolved" "https://registry.npmjs.org/passport-twitter/-/passport-twitter-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "passport-oauth1" "1.x.x"
+    "xtraverse" "0.1.x"
 
 "passport@^0.6.0":
   "integrity" "sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug=="
@@ -3869,6 +3882,18 @@
   "integrity" "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
   "resolved" "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   "version" "1.0.2"
+
+"xmldom@0.1.x":
+  "integrity" "sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ=="
+  "resolved" "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz"
+  "version" "0.1.31"
+
+"xtraverse@0.1.x":
+  "integrity" "sha512-MANQdlG2hl1nQobxz1Rv8hsS1RuBS0C1N6qTOupv+9vmfrReePdxhmB2ecYjvsp4stJ80HD7erjkoF1Hd/FK9A=="
+  "resolved" "https://registry.npmjs.org/xtraverse/-/xtraverse-0.1.0.tgz"
+  "version" "0.1.0"
+  dependencies:
+    "xmldom" "0.1.x"
 
 "yallist@^4.0.0":
   "integrity" "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A=="
