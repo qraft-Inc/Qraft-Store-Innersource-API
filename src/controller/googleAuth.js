@@ -3,7 +3,6 @@ import User from '../models/user';
 import Token from '../helpers/token';
 import messages from '../messages/messages';
 import userService from '../services/user.service';
-import userService from '../services/user.linkedinPassport';     
 
 
 passport.use(passport.initialize());
