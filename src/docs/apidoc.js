@@ -36,7 +36,8 @@ module.exports = {
 
       }
     },
-// registe end
+// registration end here
+// login start here
 '/api/auth/login': {
   get: {
     tags: ['Auth'],
@@ -52,6 +53,49 @@ module.exports = {
             "email": "prude@gmail.com",
             "password": "Orpotpeiou#toe57rut",
             
+          }
+        }
+      }
+    },
+    responses: {
+      '200': {
+        description: 'The list of the blogs',
+        content: {
+          'application/json': {
+            schema: {
+              $ref: '##/components/schemas/Blog'
+            },
+
+          }
+        }
+      }
+    },
+
+  }
+},
+// end of login section
+'/api/profile/account': {
+  post: {
+    tags: ['Profile'],
+    summary: 'create a new profile',
+    parameters: [],
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
+          example: {
+              "email":"prude@gmail.com",
+              "gender":"female",
+              "dob":"28/07/2002",
+              "price_range":"5000-1000",
+              "profession":"Singing",
+              "location":"Kirehe",
+              // "Portofolio":"https://qraftaietf.com/",
+              "Niche":"Artist",
+              "Social_media":"Instagram",
+              "Band_membership":"Kareoke"
           }
         }
       }

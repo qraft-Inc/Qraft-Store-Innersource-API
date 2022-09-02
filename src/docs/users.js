@@ -1,5 +1,5 @@
 const createUser = {
-    tags: ['Auth'],
+    tags: ['Auth','Profile'],
     description: 'Create a new user in the system',
     operationId: 'createUser',
     requestBody: {
