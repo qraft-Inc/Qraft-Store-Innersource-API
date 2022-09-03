@@ -5,6 +5,7 @@ import LinkedinController from '../controller/LinkedinAuth';
 import TwitterController from '../controller/twitterAuth';
 import AuthController from '../controller/Auth'
 import authValidation from '../validations/auth.validation'
+import ForgotPasswordController from '../controller/forgotPassword';
 
 const { registrationValidation, loginValidation } = authValidation;
 //import routes
@@ -15,6 +16,7 @@ const router = Router();
 //section routing
 router.post('/register', registrationValidation, AuthController.registration)
 router.get('/login', loginValidation, AuthController.login)
+router.get('/forgot-password',ForgotPasswordController.forgotPasswordHandler)
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }), googleController.onSuccess)
 router.get('/linkedin', passport.authenticate('linkedin'));

@@ -1,5 +1,6 @@
-import dotenv from 'dotenv';
 import passport from 'passport';
+import dotenv from 'dotenv'
+dotenv.config();
 import { Strategy as TwitterStrategy } from 'passport-twitter';
 
 const host = process.env.HOST || 'http://localhost:3000';
