@@ -1,39 +1,30 @@
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 
+const emailHelper = (sendTo, subject, htmlTemp) => {
+	const transport = nodemailer.createTransport({
+		host: 'smtp.sendgrid.net',
+		port: 587,
+		auth: {
+			user: 'apikey',
+			pass: process.env.SENDGRID_API_KEY,
+		},
+	});
 
+	const options = {
+		from: process.env.SEND_FROM,
+		to: sendTo,
+		subject: subject,
+		html: htmlTemp,
+	};
 
-const emailHelper = () => {
-
-const transport = nodemailer.createTransport({
-    // service: "hotmail",
-    host: "smtp.mail.ee",
-    // "aliases": ["Outlook", "Outlook.com", "Hotmail.com"],
-    // "domains": ["hotmail.com", "outlook.com"],
-    // "host": "smtp.live.com",
-    // "port": 587,
-    
-    auth:{
-        user:"murukarifb666",
-        pass:"qraft@mail.ee"
-    }
-    
-})
-
-const options = {
-    from:"Qraft-store",
-    to:"robertishimwe0@gmail.com",
-    subject:"tesssssssssssssssst",
-    text: "woooooooooo",
-    html: '<b>Hey there! </b><br> This is our first message sent with outNodemailer'
-}
-
-transport.sendMail(options, function(err, info){
-    if(err){
-        console.log(err)
-        return
-    }
-    console.log(info.response)
-})
-}
+	transport.sendMail(options, function (err, info) {
+		if (err) {
+			console.log(err);
+			return err;
+		}
+		console.log(info.response);
+		return info.response;
+	});
+};
 
 export default emailHelper;

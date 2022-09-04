@@ -22,6 +22,10 @@ class userService {
 		const user = await User.findOne(query);
 		if (user) return user;
 	}
+	static updateUser = async (prevUser, updatedUser) => {
+		Object.assign(prevUser, updatedUser);
+		return await prevUser.save();
+	}
 }
 
 export default userService;
