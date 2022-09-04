@@ -19,7 +19,7 @@ class ForgotPasswordController {
 		const tokenPackage = { id: isEmailInDb._id };
 		const secret = process.env.TOKEN_SECRET + isEmailInDb.password;
 		const token = await generateToken(tokenPackage, secret, '5m');
-		const emailTemp = `<a href="${process.env.HOST}/api/auth/reset-password/${isEmailInDb._id}/${token}" class="btn btn-primary">Reset password</a>`;
+		const emailTemp = `<a href="${process.env.RIDIRECT}/api/auth/reset-password/${isEmailInDb._id}/${token}" class="btn btn-primary">Reset password</a>`;
 		await emailHelper(req.body.email, subject, emailTemp);
 		res.status(200).send({ messege: 'reset link has been sent to your email' });
 	};
