@@ -1,6 +1,4 @@
 import User from '../models/user';
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
 
 class userService {
 	static createUser = async (data) => {
