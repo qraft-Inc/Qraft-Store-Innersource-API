@@ -11,7 +11,6 @@ class AuthController {
   static registration = async (req, res) => {
 
     const hashedPassword = await hashPassword(req.body.password);
-    console.log(hashedPassword)
 
     const user = {
       userName: req.body.userName,

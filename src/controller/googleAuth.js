@@ -3,6 +3,7 @@ import User from '../models/user';
 import Token from '../helpers/token';
 import messages from '../messages/messages';
 import userService from '../services/user.service';
+import '../services/googlePassport'
 
 
 passport.use(passport.initialize());
@@ -14,7 +15,7 @@ const { generateToken } = Token;
 class googleController {
 	static onSuccess = async (req, res) => {
 		try {
-			
+
 			const { name, id, email, displayName } = req.user;
 
 			const newUser = {
