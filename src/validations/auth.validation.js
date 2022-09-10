@@ -43,4 +43,5 @@ class authValidation {
 
 }
 
-export default authValidation;
+export default authValidation
+
