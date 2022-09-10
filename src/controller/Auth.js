@@ -33,7 +33,6 @@ class AuthController {
     };
     const user = await findUser(newUser.email);
     if (!user) return res.status(404).send({ error: messages.emailNotFound });
-
     try {
       const doesPasswordMatch = await checkPassword(
         newUser.password,
