@@ -15,7 +15,7 @@ const router = Router();
 
 //section routing
 router.post('/register', registrationValidation, AuthController.registration)
-router.get('/login', loginValidation, AuthController.login)
+router.post('/login', loginValidation, AuthController.login)
 router.get('/forgot-password',ForgotPasswordController.forgotPasswordHandler)
 router.patch('/reset-password/:userId/:token',ForgotPasswordController.resetPasswordHandler)       
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));

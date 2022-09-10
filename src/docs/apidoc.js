@@ -39,8 +39,13 @@ module.exports = {
 // registration end here
 // login start here
 '/api/auth/login': {
-  get: {
+  post: {
     tags: ['Auth'],
+    security: [
+      {
+        ApiKey: []
+      }
+    ],
     summary: 'User logged in',
     parameters: [],
     requestBody: {
@@ -73,11 +78,17 @@ module.exports = {
 
   }
 },
-// end of login section
-'/api/profile/account': {
-  post: {
+// updating the user profile
+
+'/api/user/profile/update': {
+  patch: {
     tags: ['Profile'],
-    summary: 'create a new profile',
+    security: [
+      {
+        ApiKey: []
+      }
+    ],
+    summary: 'update profile',
     parameters: [],
     requestBody: {
       content: {
@@ -86,16 +97,11 @@ module.exports = {
             $ref: '##/components/schemas/User'
           },
           example: {
-              "email":"prude@gmail.com",
               "gender":"female",
               "dob":"28/07/2002",
               "price_range":"5000-1000",
               "profession":"Singing",
               "location":"Kirehe",
-              // "Portofolio":"https://qraftaietf.com/",
-              "Niche":"Artist",
-              "Social_media":"Instagram",
-              "Band_membership":"Kareoke"
           }
         }
       }
@@ -116,23 +122,112 @@ module.exports = {
 
   }
 },
+// updating user bio-information
+'/api/user/biograph/update': {
+  patch: {
+    tags: ['Profile'],
+    security: [
+      {
+        ApiKey: []
+      }
+    ],
+    summary: 'update biography',
+    parameters: [],
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
+          example: {
+              "firstName":"Ahimbisibwe",
+              "lastName":"Liliane",
+              "email":"prude@gmail.com",
+              "phone":"Singing",
+              "location":"Kirehe",
+          }
+        }
+      }
+    },
+    responses: {
+      '200': {
+        description: 'The list of the blogs',
+        content: {
+          'application/json': {
+            schema: {
+              $ref: '##/components/schemas/Blog'
+            },
+
+          }
+        }
+      }
+    },
+
+  }
+},
+// updating user skills
+'/api/user/skills/update': {
+  patch: {
+    tags: ['Profile'],
+    security: [
+      {
+        ApiKey: []
+      }
+    ],
+    summary: 'update_skills',
+    parameters: [],
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
+          example: {
+              "portfolio":"https://qraftaietf.com/",
+              "Niche":"Artist",
+              "social-media":"Instagram",
+              "band-membership":"Kareoke",
+          }
+        }
+      }
+    },
+    responses: {
+      '200': {
+        description: 'The list of the blogs',
+        content: {
+          'application/json': {
+            schema: {
+              $ref: '##/components/schemas/Blog'
+            },
+
+          }
+        }
+      }
+    },
+
+  }
+},
+  },
+  
     components: {
       securitySchemes: {
-        bearerAuth: {
-          type: 'http',
-          scheme: 'bearer',
-          bearerFormat: 'JWT',
-        },
-      },
+        ApiKey: {
+          type: 'apiKey',
+          in: 'header',
+          name: 'token' 
+   
+      }
+
     },
   },
   
+
     
   openapi: '3.0.1',
   info: {
     version: '1.3.0',
     title: 'Qraft-Store - Documentation',
-    description: 'Description of my API here',
+    description: 'Description of my API her',
     contact: {
       name: 'Qraft store development',
       email: 'qraft@example.com',
@@ -159,4 +254,5 @@ module.exports = {
       name: 'Profile',
     },
   ],
+ 
 };
