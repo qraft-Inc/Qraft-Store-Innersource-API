@@ -14,7 +14,7 @@ const { generateToken } = Token;
 class googleController {
 	static onSuccess = async (req, res) => {
 		try {
-			// const doc = await collection.findOne(conditions) || await collection.create(conditions);
+			
 			const { name, id, email, displayName } = req.user;
 
 			const newUser = {

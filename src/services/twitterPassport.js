@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import passport from 'passport';
 import { Strategy as TwitterStrategy } from 'passport-twitter';
 
@@ -13,4 +11,3 @@ passport.use(new TwitterStrategy({
 }, function (accessToken, refreshToken, profile, done) {
     return done(null, profile);
 }));
-

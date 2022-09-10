@@ -5,6 +5,7 @@ import LinkedinController from '../controller/LinkedinAuth';
 import TwitterController from '../controller/twitterAuth';
 import AuthController from '../controller/Auth'
 import authValidation from '../validations/auth.validation'
+import ForgotPasswordController from '../controller/forgotPassword';
 
 const { registrationValidation, loginValidation } = authValidation;
 //import routes
@@ -14,7 +15,9 @@ const router = Router();
 
 //section routing
 router.post('/register', registrationValidation, AuthController.registration)
-router.get('/login', loginValidation, AuthController.login)
+router.post('/login', loginValidation, AuthController.login)
+router.post('/forgot-password',ForgotPasswordController.forgotPasswordHandler)
+router.patch('/reset-password/:userId/:token',ForgotPasswordController.resetPasswordHandler)       
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }), googleController.onSuccess)
 router.get('/linkedin', passport.authenticate('linkedin'));
@@ -22,6 +25,5 @@ router.get('/auth/linkedin/callback',passport.authenticate('linkedin', { failure
 router.get('/twitter', passport.authenticate('twitter', { scope: ['profile', 'email'] }));
 router.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/failed' }), TwitterController.onSuccess)
 
-// router.post('/send/forgot-password', validateEmail, sendResetPasswordEmail);   template
 
 export default router; 
