@@ -16,7 +16,7 @@ const router = Router();
 //section routing
 router.post('/register', registrationValidation, AuthController.registration)
 router.post('/login', loginValidation, AuthController.login)
-router.get('/forgot-password',ForgotPasswordController.forgotPasswordHandler)
+router.post('/forgot-password',ForgotPasswordController.forgotPasswordHandler)
 router.patch('/reset-password/:userId/:token',ForgotPasswordController.resetPasswordHandler)       
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }), googleController.onSuccess)

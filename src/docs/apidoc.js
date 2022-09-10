@@ -140,8 +140,7 @@ module.exports = {
             $ref: '##/components/schemas/User'
           },
           example: {
-              "firstName":"Ahimbisibwe",
-              "lastName":"Liliane",
+              "userName": "PrudenceAhimbisibwe",
               "email":"prude@gmail.com",
               "phone":"Singing",
               "location":"Kirehe",
@@ -183,10 +182,10 @@ module.exports = {
             $ref: '##/components/schemas/User'
           },
           example: {
-              "portfolio":"https://qraftaietf.com/",
+              "Portofolio":"https://qraftaietf.com/",
               "Niche":"Artist",
-              "social-media":"Instagram",
-              "band-membership":"Kareoke",
+              "Social_media":"Instagram",
+              "Band_membership":"Kareoke",
           }
         }
       }
@@ -207,8 +206,94 @@ module.exports = {
 
   }
 },
+
+'/api/auth/forgot-password': {
+  post: {
+    tags: ['Auth'],
+    summary: 'Forget password ',
+    parameters: [],
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
+          example: {
+            "email": "prude@gmail.com",
+            
+          }
+        }
+      }
+    },
+    responses: {
+      '200': {
+        description: 'The list of the blogs',
+        content: {
+          'application/json': {
+            schema: {
+              $ref: '##/components/schemas/Blog'
+            },
+
+          }
+        }
+      }
+    },
+
+  }
+},
+
+'/api/auth/reset-password/{userId}/{token}': {
+  patch: {
+    tags: ['Auth'],
+    summary: 'Reset Password',
+    parameters: [{
+      name: "userId",
+      in: "path",
+      required : true,
+      description : "user id",
+      schema: {
+        type: "string",
+      },
+      
+  },{
+    name: "token",
+    in: "path",
+    required : true,
+    description : "token",
+    schema: {
+      type: "string",
+    },
+    
+}],
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
+          example: {
+            "password":"Prud@5634nces",
+            "confirmPassword":"Prud@5634nces"
+            
+          }
+        }
+      }
+    },
+    responses: {
+      '200': {
+        description: 'The list of the blogs',
+        content: {
+          'application/json': {
+           
+          }
+        }
+      }
+    },
+
+  }
+},
+
   },
-  
     components: {
       securitySchemes: {
         ApiKey: {
