@@ -14,5 +14,6 @@ const router = Router();
 router.use('/auth', auth)
 router.use('/user',profile)
 router.use('/documentation',swaggerUI.serve,swaggerUI.setup(apiDocumentation));
+// router.use('/trip', multiCity); template
 
 export default router;

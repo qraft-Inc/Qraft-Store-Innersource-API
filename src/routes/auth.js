@@ -25,5 +25,6 @@ router.get('/auth/linkedin/callback',passport.authenticate('linkedin', { failure
 router.get('/twitter', passport.authenticate('twitter', { scope: ['profile', 'email'] }));
 router.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/failed' }), TwitterController.onSuccess)
 
+// router.post('/send/forgot-password', validateEmail, sendResetPasswordEmail);   template
 
 export default router; 

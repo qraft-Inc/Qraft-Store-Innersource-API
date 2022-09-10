@@ -14,7 +14,6 @@ const { generateToken } = Token;
 class googleController {
 	static onSuccess = async (req, res) => {
 		try {
-
 			const { name, id, email, displayName } = req.user;
 
 			const newUser = {
