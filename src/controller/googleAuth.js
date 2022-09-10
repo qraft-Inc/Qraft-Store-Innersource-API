@@ -1,5 +1,4 @@
 import passport from 'passport';
-import User from '../models/user';
 import Token from '../helpers/token';
 import messages from '../messages/messages';
 import userService from '../services/user.service';
@@ -42,6 +41,6 @@ class googleController {
 			res.status(400).json({ error: error.message });
 		}
 	};
-} 
+}
 
 export default googleController;
