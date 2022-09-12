@@ -5,7 +5,6 @@ const { findProfile, createProfile, updateProfile } = profileService;
 class ProfileController {
     static viewProfile = async (req, res) => {
         const user = req.user;
-        console.log(user);
     };
 
     static UpdateProfile = async (req, res) => {

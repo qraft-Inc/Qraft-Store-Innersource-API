@@ -11,7 +11,6 @@ class AuthController {
   static registration = async (req, res) => {
 
     const hashedPassword = await hashPassword(req.body.password);
-    console.log(hashedPassword)
 
     const user = {
       userName: req.body.userName,
@@ -33,7 +32,6 @@ class AuthController {
     };
     const user = await findUser(newUser.email);
     if (!user) return res.status(404).send({ error: messages.emailNotFound });
-
     try {
       const doesPasswordMatch = await checkPassword(
         newUser.password,

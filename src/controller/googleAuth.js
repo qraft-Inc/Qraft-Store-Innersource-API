@@ -1,9 +1,9 @@
 import passport from 'passport';
-import User from '../models/user';
 import Token from '../helpers/token';
 import messages from '../messages/messages';
 import userService from '../services/user.service';
-import '../services/googlePassport';
+import '../services/googlePassport'
+
 
 passport.use(passport.initialize());
 passport.use(passport.session());
@@ -14,7 +14,6 @@ const { generateToken } = Token;
 class googleController {
 	static onSuccess = async (req, res) => {
 		try {
-			// const doc = await collection.findOne(conditions) || await collection.create(conditions);
 			const { name, id, email, displayName } = req.user;
 
 			const newUser = {
@@ -41,6 +40,6 @@ class googleController {
 			res.status(400).json({ error: error.message });
 		}
 	};
-} 
+}
 
 export default googleController;
