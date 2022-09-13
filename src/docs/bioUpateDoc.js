@@ -1,6 +1,5 @@
-const biography = ()=> {
+const bio = {
 
-const bio = { 
 '/api/user/biograph/update': {
     patch: {
       tags: ['Profile'],
@@ -36,5 +35,5 @@ const bio = {
     }
   },
 }
-}
-export default biography;
+
+export default bio;
