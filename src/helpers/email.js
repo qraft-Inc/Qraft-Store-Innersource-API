@@ -22,7 +22,6 @@ const emailHelper = (sendTo, subject, htmlTemp) => {
 			console.log(err);
 			return err;
 		}
-		console.log(info.response);
 		return info.response;
 	});
 };

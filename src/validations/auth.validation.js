@@ -44,4 +44,3 @@ class authValidation {
 }
 
 export default authValidation
-

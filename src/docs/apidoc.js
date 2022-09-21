@@ -341,5 +341,3 @@ module.exports = {
   ],
  
 };
-export default apidocs;
-

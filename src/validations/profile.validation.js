@@ -55,9 +55,3 @@ class profileValidation {
 }
 
 export default profileValidation
-
-
-// photographer
-        // console.log(req.body)
-        // if(req.body.profession == 'Photographer' && req.body.price_range =='') return res.status(400).send({error: "price range is required"})
-        // if(req.body.profession == 'Photographer' && req.body.working_hours =='') return res.status(400).send({error: "working hours is required"})
