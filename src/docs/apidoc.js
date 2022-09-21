@@ -1,44 +1,41 @@
 module.exports = {
   paths: {
-  '/api/auth/register': {
-    post: {
-      tags: ['Auth'],
-      security: [
-        {
-          ApiKey: []
-        }
-      ],
-      summary: 'create account',
-      parameters: [],
-      requestBody: {
-        content: {
-          'application/json': {
-            schema: {
-              $ref: '##/components/schemas/User'
-            },
-            example: {
-              "userName": "Prudence Ahimbisibwe",
+    '/api/auth/register': {
+      post: {
+        tags: ['Auth'],
+        summary: 'Register new user',
+        parameters: [],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '##/components/schemas/User'
+              },
+              example: {
+                "userName": "Prudence Ahimbisibwe",
                 "email": "prude@gmail.com",
                 "password": "Orpotpeiou#toe57rut",
                 "Role": "client"
-              
+              }
             }
           }
-        }
-      },
-      responses: {
-        '200': {
-          description: 'create new account',
-          content: {
-            'application/json': {
-  
+        },
+        responses: {
+          '200': {
+            description: 'The list of the blogs',
+            content: {
+              'application/json': {
+                schema: {
+                  $ref: '##/components/schemas/Blog'
+                },
+
+              }
             }
           }
-        }
-      },
-  
-    }
-  },
+        },
+
+      }
+    },
 // registration end here
 // login start here
 '/api/auth/login': {
@@ -96,6 +93,9 @@ module.exports = {
     requestBody: {
       content: {
         'application/json': {
+          schema: {
+            $ref: '##/components/schemas/User'
+          },
           example: {
               "gender":"female",
               "dob":"28/07/2002",
