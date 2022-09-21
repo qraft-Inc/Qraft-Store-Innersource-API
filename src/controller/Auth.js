@@ -48,7 +48,7 @@ class AuthController {
         res
           .set('token', token)
           .status(200)
-          .send({ massage: messages.loginSuccessful, token: token });
+          .send({ message: messages.loginSuccessful, token: token });
       } else {
         res.status(400).send({ Message: 'Invalid username or password' });
       }
