@@ -2,6 +2,7 @@ import passport from 'passport';
 import GoogleStrategy from 'passport-google-oauth2';
 const host = process.env.HOST || 'http://localhost:3000';
 
+
 passport.serializeUser(function ser(user, done) {
   done(null, user);
 });
