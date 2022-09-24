@@ -42,7 +42,7 @@ class ForgotPasswordController {
 			const newUser = await updateUser(currentUserData, {
 				password: hashedPassword,
 			});
-			res.status(200).send({ message: 'password reseted'});
+			res.status(200).send({ message: 'Password Reset Successfully'});
 		} catch (error) {
 			res.status(500).send(error);
 		}
