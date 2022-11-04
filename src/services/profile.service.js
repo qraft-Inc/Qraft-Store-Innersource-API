@@ -16,6 +16,11 @@ class profileService {
 		if (profile) return profile;
 	};
 
+	static findAllProfile = async (query) => {
+		const profile = await Profile.find(query).populate('user',["_id","userName","Role"]);
+		if (profile) return profile;
+	};
+
     static updateProfile = async (prevProfile, updatedProfile) => {
         Object.assign(prevProfile, updatedProfile);
         return await prevProfile.save();

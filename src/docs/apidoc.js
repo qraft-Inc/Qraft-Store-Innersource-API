@@ -281,7 +281,25 @@ module.exports = {
     },
     responses: {
       '200': {
-        description: 'The list of the blogs',
+        description: 'Reset',
+        content: {
+          'application/json': {
+           
+          }
+        }
+      }
+    },
+
+  }
+},
+
+'/api/freelancer/all': {
+  get: {
+    tags: ['Freelancers/Artist'],
+    summary: 'Freelancers list',
+    responses: {
+      '200': {
+        description: 'Get freelancers or artist list',
         content: {
           'application/json': {
            
