@@ -6,7 +6,7 @@ import Freelancerslists from '../controller/Freelancerslists';
 const router = Router();
 
 //section routing
-router.get('/all',Freelancerslists.getAllFreelancers);
-// router.post('/send/forgot-password', validateEmail, sendResetPasswordEmail); template
+router.get('/',Freelancerslists.getAllFreelancers);
+router.get('/:id',Freelancerslists.getOneFreelancer);
 
 export default router;
