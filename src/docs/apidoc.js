@@ -281,7 +281,7 @@ module.exports = {
     },
     responses: {
       '200': {
-        description: 'The list of the blogs',
+        description: 'Reset',
         content: {
           'application/json': {
            
@@ -289,6 +289,51 @@ module.exports = {
         }
       }
     },
+
+  }
+},
+
+ '/api/freelancer': {
+   get: {
+    tags: ['Freelancers/Artist'],
+    summary: 'Freelancers list',
+    responses: {
+      '200': {
+        description: 'Get freelancers or artist list',
+        content: {
+          'application/json': {
+           
+          }
+        }
+      }
+    },
+
+   }
+ },
+
+ '/api/freelancer/{id}': {
+  get: {
+   tags: ['Freelancers/Artist'],
+   summary: 'Freelancer',
+   parameters: [{
+    name: "id",
+    in: "path",
+    required : true,
+    description : "user id",
+    schema: {
+      type: "string",
+    },  
+ }],
+   responses: {
+     '200': {
+       description: 'Get freelancer or artist',
+       content: {
+         'application/json': {
+          
+         }
+       }
+     }
+   },
 
   }
 },

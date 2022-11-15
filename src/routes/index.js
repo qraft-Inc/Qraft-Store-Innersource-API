@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import auth from './auth';
 import profile from './profile';
+import freelancer from './freelancers';
 import swaggerUI from 'swagger-ui-express';
-// import  apiDocumentation from '../docs/index';
-import  apiDocumentation  from '../docs/apidoc';
+import apiDocumentation  from '../docs/apidoc';
 
 
 
@@ -20,6 +20,7 @@ const router = Router();
 
 router.use('/auth', auth)
 router.use('/user',profile)
+router.use('/freelancer', freelancer)
 router.use('/documentation',swaggerUI.serve,swaggerUI.setup(apiDocumentation));
 // router.use('/trip', multiCity); template
 
