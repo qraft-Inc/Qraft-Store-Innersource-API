@@ -293,8 +293,8 @@ module.exports = {
   }
 },
 
-'/api/freelancer/all': {
-  get: {
+ '/api/freelancer': {
+   get: {
     tags: ['Freelancers/Artist'],
     summary: 'Freelancers list',
     responses: {
@@ -307,6 +307,33 @@ module.exports = {
         }
       }
     },
+
+   }
+ },
+
+ '/api/freelancer/{id}': {
+  get: {
+   tags: ['Freelancers/Artist'],
+   summary: 'Freelancer',
+   parameters: [{
+    name: "id",
+    in: "path",
+    required : true,
+    description : "user id",
+    schema: {
+      type: "string",
+    },  
+ }],
+   responses: {
+     '200': {
+       description: 'Get freelancer or artist',
+       content: {
+         'application/json': {
+          
+         }
+       }
+     }
+   },
 
   }
 },
